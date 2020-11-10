@@ -1,0 +1,35 @@
+blockdiag {
+  // Set fontsize
+  default_fontsize = 8;  // default value is 11
+  // set default shape
+  default_shape = roundedbox;  // default value is 'box'
+  // Define class (list of attributes)
+  class emphasis [color = green, style = dashed];
+  class redline [color = red, style = dotted];
+  // set default colors
+  default_node_color = lightblue;
+  //default_group_color = "#7777FF";
+  default_linecolor = blue;
+  default_textcolor = red;
+
+ Object -> ReplicaA [label = "catalog", fontsize = 9, class = "emphasis"] ;
+ Object -> ReplicaB [label = "catalog", fontsize = 9, class = "emphasis"];
+
+group{
+    label = "First Resource could be File System";
+    fontsize = 16;  // change fontsize of group-label
+ ReplicaA -> ChecksumA ;
+  ReplicaA -> GoodFileMarker;
+ 
+}
+
+group{
+    label = "Second Resource Could Be S3";
+    fontsize = 16;  // change fontsize of group-label
+
+ReplicaB -> GoodFileMarkerB;
+ReplicaB -> DateStampB;
+ReplicaB -> ResourceLocationB;
+ReplicaB ->ChecksumB;
+}
+}
