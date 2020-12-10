@@ -1,7 +1,7 @@
 # Running your own iRODS environment for this course
 
 ## Getting Setup
-If you dont have your own iRODs environment then you can set it up with the (iRODS Demo Docker Environment)[https://github.com/irods/irods_demo] created by RENCI. That repo has a number of docker images for assorted parts of the iRODS infrastructure.
+If you dont have your own iRODs environment then you can set it up with the [iRODS Demo Docker Environmen](https://github.com/irods/irods_demo) created by RENCI. That repo has a number of docker images for assorted parts of the iRODS infrastructure.
 
 ```
 git clone https://github.com/irods/irods_demo.git
@@ -27,4 +27,4 @@ A folder can be copied using;
 docker cp src/. irods_demo_irods-client_1:/target
 docker cp irods_demo_irods-client_1:/src/. target
 ```
-(Docker CLI docs for cp )[https://docs.docker.com/engine/reference/commandline/cp/]
+[Docker CLI docs for cp ](https://docs.docker.com/engine/reference/commandline/cp/)
