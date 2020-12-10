@@ -23,7 +23,8 @@ to copy a file *from* the container to your local filesystem;
 
 A folder can be copied using;
 
+```
 docker cp src/. irods_demo_irods-client_1:/target
 docker cp irods_demo_irods-client_1:/src/. target
-
+```
 (Docker CLI docs for cp )[https://docs.docker.com/engine/reference/commandline/cp/]
