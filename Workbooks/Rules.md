@@ -47,6 +47,14 @@ imeta ls -ld <new_file_name>
 
 Note the way you can add metadata during upload as well, something that wasn't directly addressed in the slides!
 
+### Follow On Excercises
+
+Number two is extra optional and suggested only for those who have raced through the rest and/or a programming background, at least in the time we have today!
+
+1. upload the metadata rule file into iRODS and run it using `irule` and the `i:rulefile_name` instead of the local copy of the rule.
+2. from the `irule -h` help or the [online documentation for iRule and the Rule Language](https://docs.irods.org/4.2.8/icommands/user/#irule) can you make the 'Source' and 'Destination' variables as input arguments to the rule?
+
+
 # Credits
 All the rules here were originaly from [irods_client_icommands](https://github.com/irods/irods_client_icommands/blob/master/test/rules/) repository.
 
