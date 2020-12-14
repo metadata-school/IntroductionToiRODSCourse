@@ -22,6 +22,11 @@ Take a look through [ListHomeDir.py](../Examples/ListHomeDir.py) and run it. Is 
 
 ## Basic iQuest Replacement
 
+Take a look through [BasicQuery.py](../Examples/BasicQuery.py) and run it. Is it output similar to the output of an `ils` of your homedir? 
+How is it different from the previous script?
+
+### Follow On Excercises
+1. Can you add checksum output to the script?
 
 
 # Credits
