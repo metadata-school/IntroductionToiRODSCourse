@@ -4,10 +4,10 @@ A run down of the assorted commands, grouped by use case.
 
 # Nonclemature
 
-* Files in iRODS are called Objects.
-* Directories are called Collections.
-* A file can have multiple copies. 
-* Each copy is called a Replica.
+* Files in iRODS are called _Objects_.
+* Directories are called _Collections_.
+* A object can have multiple copies. 
+* Each copy is called a _Replica_.
 
 
 # Authentication
