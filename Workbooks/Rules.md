@@ -11,10 +11,10 @@ Run the `ruleprint_hello.r` rule with
 
 `irule --file ../Examples/ruleprint_hello.r`
 
-### Follow On Excercises
+### Follow On Exercises
 
-1. Try with `irule --list --file ../Examples/ruleprint_hello.r` whats the difference? Why?
-2. Try again with the verbose option set. Whats the difference? 
+1. Try with `irule --list --file ../Examples/ruleprint_hello.r` what's the difference? Why?
+2. Try again with the verbose option set. What's the difference? 
 
 ## Copy Metadata
 
@@ -47,7 +47,7 @@ imeta ls -ld <new_file_name>
 
 Note the way you can add metadata during upload as well, something that wasn't directly addressed in the slides!
 
-### Follow On Excercises
+### Follow On Exercises
 
 Number two is extra optional and suggested only for those who have raced through the rest and/or a programming background, at least in the time we have today!
 
@@ -56,5 +56,5 @@ Number two is extra optional and suggested only for those who have raced through
 
 
 # Credits
-All the rules here were originaly from [irods_client_icommands](https://github.com/irods/irods_client_icommands/blob/master/test/rules/) repository.
+All the rules here were originally from [irods_client_icommands](https://github.com/irods/irods_client_icommands/blob/master/test/rules/) repository.
 
