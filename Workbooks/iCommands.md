@@ -60,3 +60,63 @@ iput -K --progress -V /tmp/$USER_iget_small
 1. Try it again. What happens?
 2. Try it _again_ with the additional argument of `-f`. What’s different?
 3. Try it with the small and large files. How does it differ?
+
+## Removing Files
+
+`irm <a file you have previously uploaded>`
+
+(If you haven’t uploaded file, upload one now with iput)
+
+### Follow on Exercises: 
+
+1. Verify its gone with ils
+2. List (ils) the trash e.g. /myZone/trash/home/myUserName
+3. Try deleting the trash file with irmtrash. 
+4. List both home directory and trash home directory. 
+
+## Collections
+
+```
+imkdir testdir
+icd testdir
+```
+
+### Follow on Exercises: 
+1. Try ils after each step
+2. Get back to your homedir with icd 
+3. Try to create the collection again. What happens?
+
+## ichmod
+
+Pick a colleague, ask them what their username in iRODS is.
+
+Give them access to a file in your homedir with 
+
+`ichmod read <user> <file>`
+
+(If you haven’t uploaded file, upload one now with iput)
+
+N.B. Remember that they will need to use `/zonename/home/youruser/<file>` to access the file.
+
+
+### Follow on Exercises: 
+1. Can they view the file with ils?
+2. What do you see when you do `ils -A` on the file? 
+2. Can they overwrite the file with iput? Why not? What would you need to let them do this? 
+
+## Copying and Moving Objects
+
+Pick a colleague, ask for access to a file in their homedir.
+
+Copy it to your homedir with
+
+`icp /myZone/home/ThierUserName/<file> /myZone/home/YourUserName`
+
+### Follow on Exercises: 
+
+1. Do both files still exist (`ils`) 
+2. Can you `imv` the file? Why/why not? What permission would they need to grant? 
+
+From the local copy of the GitHub for the course you made earlier 
+(git clone https://github.com/metadata-school/IntroductionToiRODSCourse.git )
+Follow the ‘Collections’  section.
