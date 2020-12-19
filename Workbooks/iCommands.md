@@ -116,7 +116,3 @@ Copy it to your homedir with
 
 1. Do both files still exist (`ils`) 
 2. Can you `imv` the file? Why/why not? What permission would they need to grant? 
-
-From the local copy of the GitHub for the course you made earlier 
-(git clone https://github.com/metadata-school/IntroductionToiRODSCourse.git )
-Follow the ‘Collections’  section.
