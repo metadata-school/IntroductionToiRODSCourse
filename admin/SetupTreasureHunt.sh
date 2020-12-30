@@ -7,7 +7,7 @@ set -euo pipefail
 #
 # IMPORTANT README!
 # users.txt is a file containing all the iRODS accounts to take part 
-# in the game.  Each account must be on a seperate line.
+# in the game.  Each account must be on a separate line.
 # Set the base collection path for the test directory with:
 # BCOLL="/collection/path" SetupTreasureHunt.sh
 
@@ -50,7 +50,7 @@ echo -e "\e[32mcreated Uploading answer file to /${COLL}/${ANSWERFILE}\e[0m"
 echo "iput -K --metadata clue;${clue} /${COLL}/${ANSWERFILE}"
  
 
-#check for existance of users file, abort if not present and readable
+#check for existence of users file, abort if not present and readable
 if test -r "$PLAYERS" -a -f "$PLAYERS"
 then 
     while read -r LINE; do
