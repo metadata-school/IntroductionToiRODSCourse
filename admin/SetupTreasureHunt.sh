@@ -65,7 +65,7 @@ ANSWERFILE="${ANSWERFILELOC##*/}"
 echo -e "\e[32mPlease Tell Instructor users game file will be at ${COLL}/${GAMEFILE}\e[0m"
 iput -K --metadata="clue;${clue}" "${GAMEFILELOC}" "${COLL}/${GAMEFILE}"
 
-echo -e "\e[32mUploading ${ANSWERFILELOC}\e[0m"
+echo -e "\e[32mUploading ${ANSWERFILELOC} to YOUR Homedir\e[0m"
 iput -K --metadata="clue;${clue}" "${ANSWERFILELOC}" "${ANSWERFILE}"
 
 #get zone name in case of federated users
