@@ -81,3 +81,8 @@ A run down of the assorted commands, grouped by use case.
 # Rules
 
 `irule` - run iRODS Rule Engine Rules.
+
+---
+
+[Online iRODS 4.2.8 icommands documentation](https://docs.irods.org/4.2.8/icommands/user/)
+
