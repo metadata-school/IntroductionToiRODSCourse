@@ -39,9 +39,9 @@ Can you see how the two separate sets of output relate?
 
 ```
 #create a small file
-dd if=/dev/zero of=/tmp/$USER_iget_small bs=1k count=42
+dd if=/dev/zero of=/tmp/"{$USER}_iget_small" bs=1k count=42
 #upload the file to your home collection
-iput -K --progress -V /tmp/$USER_iget_small
+iput -K --progress -V /tmp/"${USER}_iget_small"
 ```
 
 ### Follow On Exercises
