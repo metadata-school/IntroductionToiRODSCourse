@@ -120,9 +120,3 @@ Using the help (-h /  [Docs Link](https://docs.irods.org/4.2.8/icommands/user/#i
 
 1. Use the printf format to display the output on one line
 2. Use the printf and help to write a query that shows how many files _and_ how much space used in total, all on one line. 
-
-
-
-From the local copy of the GitHub for the course you made earlier 
-(git clone https://github.com/metadata-school/IntroductionToiRODSCourse.git )
-Follow the "Removing Metadata"  section.
