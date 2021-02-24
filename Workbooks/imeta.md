@@ -20,7 +20,7 @@ Pick a file you have already uploaded (check with `ils` or upload a new one with
 
 Pick a file you have already applied metadata to and remove an AVU of your choice, e.g.
 
-`imeta rm-d /myZone/home/UserName/<file> BasketItem`
+`imeta rm-d /myZone/home/UserName/<file> BasketItem Banana Fruit `
 
 ### Follow on Exercises: 
 
