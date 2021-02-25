@@ -7,7 +7,7 @@ The files referred to are in the Examples directory at the top of this repo.
 
 A traditional start!
 
-Run the `ruleprint_hello.r` rule with
+Run the [ruleprint_hello.r](../Examples/ruleprint_hello.r) rule with
 
 `irule --file ../Examples/ruleprint_hello.r`
 
