@@ -35,10 +35,12 @@ coll = session.collections.get(homedir)
 #print objects in CWD
 print("Objects in Homedir:")
 for obj in coll.data_objects:
-    print("%s: checksum: %s size: %d id: %d") % (
-          obj.name, obj.checksum, obj.size, obj.id)
+    print("name:", obj.name)
+    print("size:", obj.size)
+    print("ID:", obj.id)
 
 #print collections in CWD
 print("Collections in Homedir:")
 for col in coll.subcollections:
-    print("%s: in path: %s") % (col.name, col.path)
+    print("name:", col.name)
+    print("path:", col.path)
