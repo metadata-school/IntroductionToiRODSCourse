@@ -5,7 +5,8 @@
 ### Create a Virtualenv - python2
 ```
 # if not installed, ask your admin to run `sudo apt install virtualenv`
-virtualenv /tmp/prc
+TMPFILE=$(mktemp)
+virtualenv "/tmp/prc_${TMPFILE}"
 source /tmp/prc/bin/activate
 # incompatable with latest version of prettytable so https://github.com/irods/python-irodsclient/issues/254
 pip install prettytable==1.0.1
@@ -16,7 +17,8 @@ pip install python-irodsclient==0.8.5
 
 ```
 # if not installed, ask your admin to run `sudo apt-get install python3-venv`
-python3 -m venv  /tmp/prc
+TMPFILE=$(mktemp)
+python3 -m venv "/tmp/prc_${TMPFILE}"
 source /tmp/prc/bin/activate
 # incompatable with latest version of prettytable so https://github.com/irods/python-irodsclient/issues/254
 pip install prettytable==1.0.1
