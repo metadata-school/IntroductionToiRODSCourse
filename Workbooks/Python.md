@@ -2,7 +2,7 @@
 
 ## Setting up
 
-Create a Virtualenv
+### Create a Virtualenv - python2
 ```
 # if not installed, ask your admin to run `sudo apt install virtualenv`
 virtualenv /tmp/prc
@@ -11,6 +11,19 @@ source /tmp/prc/bin/activate
 pip install prettytable==1.0.1
 pip install python-irodsclient==0.8.5
 ```
+
+### Create a Virtualenv - python3
+
+```
+# if not installed, ask your admin to run `sudo apt-get install python3-venv`
+python3 -m venv  /tmp/prc
+source /tmp/prc/bin/activate
+# incompatable with latest version of prettytable so https://github.com/irods/python-irodsclient/issues/254
+pip install prettytable==1.0.1
+pip install python-irodsclient==0.8.5
+```
+
+
 N.B When trying out this workbook, make sure you have the virtualenv sourced.
 
 ## Basic 'ils' Replacement
