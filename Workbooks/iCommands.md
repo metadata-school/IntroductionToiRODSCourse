@@ -7,7 +7,7 @@ If that's not the case, but you can run docker containers, take a look at the [S
 
 1. Logon to your test system
 2. Show the current environment with `ienv`
-3. Find out about your account with `iuserinfo`
+3. Find out about your account with `iuserinfo your_irods_username` (look for "irods_user_name" in the above output for your username)
 
 Can you see how the two separate sets of output relate?
 
