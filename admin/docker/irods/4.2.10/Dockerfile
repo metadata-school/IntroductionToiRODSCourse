@@ -1,5 +1,5 @@
 #
-# iRODS Provider Image for 4.2.9
+# iRODS Provider Image for 4.2.10
 #
 FROM ubuntu:18.04
 
@@ -21,7 +21,7 @@ RUN wget -qO - https://packages.irods.org/irods-signing-key.asc | apt-key add -;
     echo "deb [arch=amd64] https://packages.irods.org/apt/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/renci-irods.list; \
     apt-get update
 RUN DEBIAN_FRONTEND=noninteractive \
-    apt-get install -y irods-runtime=4.2.9 irods-icommands=4.2.9 irods-server=4.2.9 irods-database-plugin-postgres=4.2.9
+    apt-get install -y irods-runtime=4.2.10 irods-icommands=4.2.10 irods-server=4.2.10 irods-database-plugin-postgres=4.2.10
 COPY configure_users.py /var/lib/irods/scripts/
 
 EXPOSE 1248 1247

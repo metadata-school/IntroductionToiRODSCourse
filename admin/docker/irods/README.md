@@ -3,13 +3,15 @@
 ## Build 
 
 ```
-sudo docker image build --tag irodsserver:4.2.9 .
+# change to the version of iRODS you want to have a container for e.g.
+cd admin/docker/irods/4.2.10
+sudo docker image build --tag irodsserver:4.2.10 .
 ```
 
 ## run docker in background 
 
 ```
-sudo docker run --name irodsServer -h irodsServer -p 1248:1248 -p 1247:1247 --shm-size=512m -d --rm irodsserver:4.2.9
+sudo docker run --name irodsServer -h irodsServer -p 1248:1248 -p 1247:1247 --shm-size=512m -d --rm irodsserver:4.2.10
 ```
 
 ### run commands from within container
