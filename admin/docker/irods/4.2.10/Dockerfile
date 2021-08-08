@@ -16,6 +16,10 @@ RUN service postgresql start && su - postgres -c 'psql -f /db_commands.txt'
 # Clone Training Repository
 RUN mkdir -p /training; cd /training; git clone https://github.com/metadata-school/IntroductionToiRODSCourse.git
 
+# copy training user setup stuff
+COPY adduser.local /usr/local/sbin/
+COPY users.txt /
+
 # Install iRODS
 RUN wget -qO - https://packages.irods.org/irods-signing-key.asc | apt-key add -; \
     echo "deb [arch=amd64] https://packages.irods.org/apt/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/renci-irods.list; \

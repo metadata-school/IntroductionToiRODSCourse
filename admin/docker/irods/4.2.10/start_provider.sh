@@ -25,6 +25,11 @@ fi
 # set the permissions for the github
 chown -R irods:irods /training
 
+#create the test users
+# iRODS environment files are created by adduser.local script
+sudo adduser --home /home/ash --shell /bin/bash --ingroup irods --gecos '' --disabled-login ash
+sudo adduser --home /home/berri --shell /bin/bash --ingroup irods --gecos '' berri
+
 
 #give it a bit for the procs to finish
 running="True"
