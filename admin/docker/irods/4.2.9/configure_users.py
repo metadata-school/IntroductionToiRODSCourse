@@ -9,6 +9,7 @@ from irods.test import session
 
 rods = session.make_session_for_existing_admin()
 
-rods.assert_icommand('iadmin mkuser training rodsuser')
-rods.assert_icommand('iadmin moduser training password topsecret')
-
+rods.assert_icommand('iadmin mkuser ash rodsuser')
+rods.assert_icommand('iadmin moduser ash password topsecret')
+rods.assert_icommand('iadmin mkuser berri rodsuser')
+rods.assert_icommand('iadmin moduser berri password ultratopsecret')

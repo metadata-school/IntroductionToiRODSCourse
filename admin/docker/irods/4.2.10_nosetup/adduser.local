@@ -1,0 +1,49 @@
+#!/bin/bash
+## Site-specific setup for newly-created users.
+## adduser(8) will call this script after setting up a new user.
+# modfied from https://askubuntu.com/questions/983649/programmatically-clone-etc-skel-for-new-users
+
+
+set -euo pipefail
+if [[ "$#" != 4 ]]; then
+  echo "usage: $0 username home" > /dev/stderr
+fi
+NEW_USERNAME="${1:?}"
+NEW_UID="${2:?}"
+NEW_GID="${3:?}"
+NEW_HOME="${4:?}"
+
+IRODSENVIRONMENTDIR="${NEW_HOME}/.irods"
+mkdir -p "${IRODSENVIRONMENTDIR}"
+IRODSENVIRONMENTFILE="$IRODSENVIRONMENTDIR/irods_environment.json"
+/bin/cat <<EOM >"$IRODSENVIRONMENTFILE"
+{
+    "irods_client_server_negotiation": "request_server_negotiation", 
+    "irods_client_server_policy": "CS_NEG_REFUSE", 
+    "irods_connection_pool_refresh_time_in_seconds": 300, 
+    "irods_cwd": "/tempZone/home/${NEW_USERNAME}", 
+    "irods_default_hash_scheme": "SHA256", 
+    "irods_default_number_of_transfer_threads": 4, 
+    "irods_default_resource": "demoResc", 
+    "irods_encryption_algorithm": "AES-256-CBC", 
+    "irods_encryption_key_size": 32, 
+    "irods_encryption_num_hash_rounds": 16, 
+    "irods_encryption_salt_size": 8, 
+    "irods_home": "/tempZone/home/${NEW_USERNAME}", 
+    "irods_host": "irodsServer", 
+    "irods_match_hash_policy": "compatible", 
+    "irods_maximum_size_for_single_buffer_in_megabytes": 32, 
+    "irods_port": 1247, 
+    "irods_server_control_plane_encryption_algorithm": "AES-256-CBC", 
+    "irods_server_control_plane_encryption_num_hash_rounds": 16, 
+    "irods_server_control_plane_key": "32_byte_server_control_plane_key", 
+    "irods_server_control_plane_port": 1248, 
+    "irods_transfer_buffer_size_for_parallel_transfer_in_megabytes": 4, 
+    "irods_user_name": "${NEW_USERNAME}", 
+    "irods_zone_name": "tempZone", 
+    "schema_name": "irods_environment", 
+    "schema_version": "v3"
+}
+EOM
+chown -R ${NEW_USERNAME}:irods ${IRODSENVIRONMENTDIR}
+echo -e "\e[32mcreated ${NEW_USERNAME} iRODS Environment file at: ${IRODSENVIRONMENTFILE}\e[0m"

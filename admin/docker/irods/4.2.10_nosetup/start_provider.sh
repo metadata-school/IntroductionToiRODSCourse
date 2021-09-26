@@ -17,11 +17,9 @@ sed -i 's/CS_NEG_DONT_CARE/CS_NEG_REFUSE/' /var/lib/irods/packaging/core.re.temp
 if [ ! -e /var/lib/irods/VERSION.json ]; then
 python /var/lib/irods/scripts/setup_irods.py < /var/lib/irods/packaging/localhost_setup_postgres.input
 
-# in 4.2.9 onwards the server is now stopped at the end of setup_irods.py 
-sudo su - irods -c './irodsctl start'
 cd /var/lib/irods/scripts
 python configure_users.py
-sudo su - irods -c './irodsctl stop'
+pkill irodsServer
 fi
 
 # set the permissions for the github

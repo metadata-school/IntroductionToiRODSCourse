@@ -35,31 +35,40 @@ Can you see how the two separate sets of output relate?
 
 1. what's the difference between the `ils -A` output for an object vs a collection?
 
-## Uploading Files with `iget` 
+## Uploading Files with `iput` 
 
 ```
 #create a small file
 dd if=/dev/zero of=/tmp/"${USER}_iget_small" bs=1k count=42
 #upload the file to your home collection
-iput -K --progress -V /tmp/"{$USER}_iget_small"
+iput -K --progress -V /tmp/"${USER}_iget_small"
 ```
 
 ### Follow On Exercises
 
 1. Try it again. What happens?
-2. Try it again with -f. What’s different? 
-3. Try it with iput -K --progress -V <file> <newfilename>. What happens?
-4. Try (3) with a new filename and without -K then look at both files with `ils -L`. What’s different?
+2. Try it again with `-f`. What’s different?
+3. Try it with `iput -K --progress -V <file> <newfilename>`. What happens?
+4. Try (3) with a new filename and without `-K`, then look at both files with `ils -L`. What’s different?
 5. Create a file larger than 64MB and upload it using the same settings. What's changed?
 
-## Retrieving Files with `iget`
+```
+# Example - creating a 'large' file
+dd if=/dev/zero of=/tmp/"${USER}_iget_large" bs=1M count=33
+ls /tmp/"${USER}_iget_large"
+```
+
+## Retrieving Files with `iget`.
+
+If you don't have any uploaded files in your iRODS homedir yet, upload one as we did in the previous exercise.
 
 `iget -K --progress -V <file>`
 
 ### Follow On Exercises
 1. Try it again. What happens?
 2. Try it _again_ with the additional argument of `-f`. What’s different?
-3. Try it with the small and large files. How does it differ?
+3. Try it with small and 'large' (over 32MB) files. How does it differ?
+
 
 ## Removing Files
 
@@ -70,7 +79,7 @@ iput -K --progress -V /tmp/"{$USER}_iget_small"
 ### Follow on Exercises: 
 
 1. Verify its gone with ils
-2. List (ils) the trash e.g. /myZone/trash/home/myUserName
+2. List (ils) the trash e.g. /tempZone/trash/home/${NEW_USERNAME}
 3. Try deleting the trash file with irmtrash. 
 4. List both home directory and trash home directory. 
 
@@ -94,7 +103,7 @@ Give them access to a file in your homedir with
 
 `ichmod read <user> <file>`
 
-(If you haven’t uploaded file, upload one now with iput)
+(If you haven’t uploaded file, upload one now with `iput` as per the previous sections)
 
 N.B. Remember that they will need to use `/zonename/home/youruser/<file>` to access the file.
 

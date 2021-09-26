@@ -17,9 +17,10 @@ sed -i 's/CS_NEG_DONT_CARE/CS_NEG_REFUSE/' /var/lib/irods/packaging/core.re.temp
 if [ ! -e /var/lib/irods/VERSION.json ]; then
 python /var/lib/irods/scripts/setup_irods.py < /var/lib/irods/packaging/localhost_setup_postgres.input
 
+sudo su - irods -c './irodsctl start'
 cd /var/lib/irods/scripts
 python configure_users.py
-pkill irodsServer
+sudo su - irods -c './irodsctl stop'
 fi
 
 # set the permissions for the github
@@ -28,7 +29,9 @@ chown -R irods:irods /training
 #create the test users
 # iRODS environment files are created by adduser.local script
 sudo adduser --home /home/ash --shell /bin/bash --ingroup irods --gecos '' --disabled-login ash
-sudo adduser --home /home/berri --shell /bin/bash --ingroup irods --gecos '' berri
+sudo adduser --home /home/berri --shell /bin/bash --ingroup irods --gecos '' --disabled-login berri
+
+# "irods_authentication_file": "/tmp/.irodsA_berri",
 
 
 #give it a bit for the procs to finish

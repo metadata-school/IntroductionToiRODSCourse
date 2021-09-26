@@ -13,7 +13,7 @@ Run the [ruleprint_hello.r](../Examples/ruleprint_hello.r) rule with
 
 ### Follow On Exercises
 
-Number two is extra optional and suggested only for those who have raced through the rest and/or a programming background, at least in the time we have today!
+Number two is extra optional and suggested only for those who have raced through the rest and/or have a programming background, at least in the time we have today!
 
 1. Try with `irule --list --file ../Examples/ruleprint_hello.r` what's the difference? Why?
 2. Try again with the verbose option set. What's the difference? 
