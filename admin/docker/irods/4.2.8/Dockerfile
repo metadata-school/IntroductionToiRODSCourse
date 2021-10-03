@@ -6,8 +6,8 @@ FROM ubuntu:18.04
 # Install pre-requisites
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive \
-    apt-get install -y sudo wget lsb-release apt-transport-https postgresql vim python-pip libfuse2 unixodbc rsyslog less netcat git && \
-    pip install xmlrunner
+    apt-get install -y sudo wget lsb-release apt-transport-https postgresql vim python-pip libfuse2 unixodbc rsyslog less netcat git curl && \
+    pip install xmlrunner curl
 
 # Setup catalog database
 COPY db_commands.txt /
