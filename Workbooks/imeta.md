@@ -37,8 +37,7 @@ Upload some books from Project Gutenburg; e.g.
 2. [Shavings: A Novel by Joseph Crosby Lincoln](https://www.gutenberg.org/ebooks/2452)
 
 ```
-curl -o ShavingMadeEasy.mobi https://www.gutenberg.org/ebooks/43166.epub.images?session_id=
-7992ad5e5679ccd1ca8c463883a8215f50a81efa
+curl -o ShavingMadeEasy.mobi https://www.gutenberg.org/ebooks/43166.epub.images?session_id=7992ad5e5679ccd1ca8c463883a8215f50a81efa
 curl -o Shavings.mobi https://www.gutenberg.org/ebooks/2452.epub.noimages?session_id=7992ad5e5679ccd1ca8c463883a8215f50a81efa
 ```
 
@@ -51,7 +50,7 @@ iput Shavings.mobi
 
 #### Add Metadata
 
-Now we have the files, let’s add some metadata about them
+Now we have the files, let’s add some metadata about them. 
 
 ```
 imeta add -d ShavingMadeEasy.mobi Author Anonymous
@@ -78,26 +77,26 @@ Let’s find all the files that have a metadata field of ‘Author’ set, and w
 
 #### Searching Metadata within a String
 
-How about searching within the string, in this case for part of an Author’s name
+How about searching within the string, in this case, for part of an Author’s name
 
 `imeta qu -d Author like %Crosby%`
 
 
 #### Searching where Metadata Name Exists
 
-Finally, find all the files where the Author metadata has been set
+Finally, find all the files where the Author metadata has been set. 
 
 `imeta qu -d Author like %`
 
 ### Follow on Exercises: 
 
-1. Pick another eBook and upload it with the same metadata fields, but this time, apply the metadata at time of upload using `iput` [Docs Link](https://docs.irods.org/4.2.8/icommands/user/#iput)
-2. Check the same searches you just used find the new object.
+1. Pick another eBook and upload it with the same metadata fields, but this time, apply the metadata at the time of upload using `iput` [Docs Link](https://docs.irods.org/4.2.8/icommands/user/#iput)
+2. Check the same searches you just used to find the new object.
 
 
 ## iquest 
 
-Generate a report of the size of the data stored by all users, by user;
+Generate a report of the size of the data stored by all users, by the user;
 
 `iquest "User %-9.9s uses %14.14s bytes in %8.8s files in '%s'" "SELECT USER_NAME, sum(DATA_SIZE),count(DATA_NAME),RESC_NAME"`
 
