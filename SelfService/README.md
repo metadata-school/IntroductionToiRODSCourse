@@ -3,7 +3,7 @@
 ## Getting Setup
 If you dont have your own iRODs environment then you can set it up with the [iRODS Demo Docker Environmen](https://github.com/irods/irods_demo) created by RENCI. That repo has a number of docker images for assorted parts of the iRODS infrastructure. 
 
-__N.B. Until [this has been merged](https://github.com/irods/irods_demo/pull/23/files) it's reccomended to either use 4.2.8 via that MR, or use the 4.2.10 Stand-alone [Docker Container](https://github.com/metadata-school/IntroductionToiRODSCourse/tree/main/admin/docker/irods) created for this course.
+__N.B. Until [this has been merged](https://github.com/irods/irods_demo/pull/23/files) it's recommended to either use 4.2.8 via that MR, or use the 4.2.10 Stand-alone [Docker Container](https://github.com/metadata-school/IntroductionToiRODSCourse/tree/main/admin/docker/irods) created for this course.
 
 ```
 git clone https://github.com/irods/irods_demo.git
