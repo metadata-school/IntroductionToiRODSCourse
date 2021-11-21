@@ -29,16 +29,19 @@ ssl_settings = {'ssl_context': ssl_context}
 with iRODSSession(irods_env_file=env_file, **ssl_settings) as session:
     pass
 
-query = session.query(Collection.name, 
-                      DataObject.id, 
-                      DataObject.name, 
-                      DataObject.size)
+    # set timeout to 10 mins rather than 2.
+    session.connection_timeout = 600 
 
-for result in query:
-    print('{}/{} id={} size={}'.format(result[Collection.name], 
-                                        result[DataObject.name], 
-                                        result[DataObject.id], 
-                                        result[DataObject.size]
-                                        )
-         )
+    query = session.query(Collection.name, 
+                          DataObject.id, 
+                          DataObject.name, 
+                          DataObject.size)
+
+    for result in query:
+        print('{}/{} id={} size={}'.format(result[Collection.name], 
+                                            result[DataObject.name], 
+                                            result[DataObject.id], 
+                                            result[DataObject.size]
+                                            )
+            )
 
