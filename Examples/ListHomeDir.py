@@ -26,21 +26,23 @@ ssl_settings = {'ssl_context': ssl_context}
 
 # now establish the session with the iRODS server
 with iRODSSession(irods_env_file=env_file, **ssl_settings) as session:
-    pass
 
-homedir = ("/%s/home/%s") % (session.zone, session.username)
+    # set timeout to 10 mins rather than 2.
+    session.connection_timeout = 600 
 
-coll = session.collections.get(homedir)
+    homedir = ("/%s/home/%s") % (session.zone, session.username)
 
-#print objects in CWD
-print("Objects in Homedir:")
-for obj in coll.data_objects:
-    print("name:", obj.name)
-    print("size:", obj.size)
-    print("ID:", obj.id)
+    coll = session.collections.get(homedir)
 
-#print collections in CWD
-print("Collections in Homedir:")
-for col in coll.subcollections:
-    print("name:", col.name)
-    print("path:", col.path)
+    #print objects in CWD
+    print("Objects in Homedir:")
+    for obj in coll.data_objects:
+        print("name:", obj.name)
+        print("size:", obj.size)
+        print("ID:", obj.id)
+
+    #print collections in CWD
+    print("Collections in Homedir:")
+    for col in coll.subcollections:
+        print("name:", col.name)
+        print("path:", col.path)
