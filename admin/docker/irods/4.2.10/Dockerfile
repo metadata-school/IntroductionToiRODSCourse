@@ -7,7 +7,7 @@ FROM ubuntu:18.04
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive \
     apt-get install -y sudo wget lsb-release apt-transport-https postgresql vim python-pip libfuse2 unixodbc rsyslog less netcat git curl && \
-    pip install xmlrunner python3-venv
+    pip install xmlrunner
 
 # Setup catalog database
 COPY db_commands.txt /
