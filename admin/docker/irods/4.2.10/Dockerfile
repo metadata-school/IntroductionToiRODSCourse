@@ -28,6 +28,9 @@ RUN DEBIAN_FRONTEND=noninteractive \
     apt-get install -y irods-runtime=4.2.10 irods-icommands=4.2.10 irods-server=4.2.10 irods-database-plugin-postgres=4.2.10
 COPY configure_users.py /var/lib/irods/scripts/
 
+# Install Python Modules
+RUN pip install --upgrade pip==20.3.4; pip install python-irodsclient==0.8.5
+
 EXPOSE 1248 1247
 
 # Set command to execute when launching the container.
