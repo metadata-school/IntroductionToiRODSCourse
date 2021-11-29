@@ -7,7 +7,7 @@ FROM ubuntu:18.04
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive \
     apt-get install -y sudo wget lsb-release apt-transport-https postgresql vim python-pip libfuse2 unixodbc rsyslog less netcat git curl && \
-    pip install xmlrunner
+    pip install xmlrunner python3-venv
 
 # Setup catalog database
 COPY db_commands.txt /
@@ -27,6 +27,9 @@ RUN wget -qO - https://packages.irods.org/irods-signing-key.asc | apt-key add -;
 RUN DEBIAN_FRONTEND=noninteractive \
     apt-get install -y irods-runtime=4.2.10 irods-icommands=4.2.10 irods-server=4.2.10 irods-database-plugin-postgres=4.2.10
 COPY configure_users.py /var/lib/irods/scripts/
+
+# Install Python Modules
+RUN pip install --upgrade pip==20.3.4; pip install python-irodsclient==0.8.5
 
 EXPOSE 1248 1247
 
