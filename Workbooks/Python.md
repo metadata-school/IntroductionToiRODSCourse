@@ -33,20 +33,20 @@ N.B When trying out this workbook, make sure you have the virtualenv sourced.
 
 Take a look through [ListHomeDir.py](../Examples/ListHomeDir.py) and run it. Is it output similar to the output of an `ils` of your homedir? 
 
-### Follow On Excercises
+### Follow On Exercises
 
 1. Can you add "create time" and "replica status" to the output report? (Hint: load the code into REPL and run dir(obj) or read the source (see Credits)).
 2. Can you extend the code to print any/all metadata attached to an object?
 
 ## Basic iQuest Replacement
 
-Take a look through [BasicQuery.py](../Examples/BasicQuery.py) and run it. Is it output similar to the output of an `ils` of your homedir? 
+Take a look through [BasicQuery.py](../Examples/BasicQuery.py) and run it. Is the output similar to the output of an `ils` of your home dir? 
 How is it different from the previous script?
 
-### Follow On Excercises
+### Follow On Exercises
 1. Can you add checksum output to the script?
 
 
 # Credits
 
-Examples thanks to example code at [Python iRODs Client](https://github.com/irods/python-irodsclient).
+Examples thanks to example code at [Python iRODS Client](https://github.com/irods/python-irodsclient).
