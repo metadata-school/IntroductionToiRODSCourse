@@ -48,3 +48,6 @@ sudo docker exec -ti -u irods  irodsServer  /bin/bash
 cd 4.2.10
 tar -czvf tarball.tar.gz Dockerfile start_provider.sh db_commands.txt configure_users.py users.txt adduser.local
 ```
+## Lint Docker files 
+
+`sudo docker run --rm -i hadolint/hadolint < ./admin/docker/irods/4.2.10/Dockerfile`
