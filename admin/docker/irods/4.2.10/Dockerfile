@@ -7,7 +7,7 @@ FROM ubuntu:18.04
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive \
     apt-get install -y sudo wget lsb-release apt-transport-https postgresql vim python-pip libfuse2 unixodbc rsyslog less netcat git curl ispell \
-    && pip install xmlrunner  \
+    && pip install xmlrunner==1.7.7  \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
