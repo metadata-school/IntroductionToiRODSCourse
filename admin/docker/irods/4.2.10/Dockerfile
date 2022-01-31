@@ -16,7 +16,7 @@ COPY db_commands.txt /
 RUN service postgresql start && su - postgres -c 'psql -f /db_commands.txt'
 
 # Clone Training Repository
-RUN mkdir -p /training; cd /training; git clone https://github.com/metadata-school/IntroductionToiRODSCourse.git
+RUN mkdir -p /training; git clone https://github.com/metadata-school/IntroductionToiRODSCourse.git /training
 
 # copy training user setup stuff
 COPY adduser.local /usr/local/sbin/
