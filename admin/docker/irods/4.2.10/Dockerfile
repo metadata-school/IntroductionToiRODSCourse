@@ -7,7 +7,7 @@ FROM ubuntu:18.04
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive \
     apt-get install -y sudo wget lsb-release apt-transport-https postgresql vim python-pip libfuse2 unixodbc rsyslog less netcat git curl ispell \
-    && pip install xmlrunner==1.7.7  \
+    && pip install --no-cache-dir xmlrunner==1.7.7  \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
@@ -31,7 +31,7 @@ RUN DEBIAN_FRONTEND=noninteractive \
 COPY configure_users.py /var/lib/irods/scripts/
 
 # Install Python Modules
-RUN pip install --upgrade pip==20.3.4; pip install python-irodsclient==0.8.5
+RUN pip install --no-cache-dir --upgrade pip==20.3.4; pip install --no-cache-dir python-irodsclient==0.8.5
 
 EXPOSE 1248 1247
 
