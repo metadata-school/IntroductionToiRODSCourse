@@ -1,27 +1,34 @@
 #
 # iRODS Provider Image for 4.2.10
 #
-FROM ubuntu:18.04
+FROM ubuntu:bionic-20220128
 
 # Install pre-requisites
-RUN DEBIAN_FRONTEND=noninteractive \
-    apt-get update \
-    && apt-get install -y \
-    apt-transport-https \
-    curl \
-    git \
-    ispell \
-    less \
-    libfuse2 \
-    lsb-release \
+# tzone bug with it not seeming to respect noninteractive
+# https://serverfault.com/questions/949991/how-to-install-tzdata-on-a-ubuntu-docker-image
+RUN apt-get update && \
+    DEBIAN_FRONTEND=noninteractive \
+    TZ=Europe/London \
+    apt-get install -y \
+    apt-transport-https=1.6.14 \
+    curl=7.58.0-2ubuntu3.16 \
+    git=1:2.17.1-1ubuntu0.9 \
+    ispell=3.4.00-6 \
+    less=487-0.1 \
+    libfuse2=2.9.7-1ubuntu1 \
+    lsb-release=9.20170808ubuntu1 \
+    #netcat=9.20170808ubuntu1 \
     netcat \
-    postgresql \
-    python-pip \
-    rsyslog \
+    postgresql=10+190ubuntu0.1 \
+    python-pip=9.0.1-2.3~ubuntu1.18.04.5  \
+    rsyslog=8.32.0-1ubuntu4 \
+    #sudo=8.32.0-1ubuntu4 \
     sudo \
+    #unixodbc=8.32.0-1ubuntu4 \
     unixodbc \
+    #vim=2:8.0.1453-1ubuntu1.7 \
     vim \
-    wget \
+    wget=1.19.4-1ubuntu2.2 \
     && pip install --no-cache-dir xmlrunner==1.7.7  \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
