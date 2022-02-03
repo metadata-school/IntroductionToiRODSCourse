@@ -17,17 +17,13 @@ RUN apt-get update && \
     less=487-0.1 \
     libfuse2=2.9.7-1ubuntu1 \
     lsb-release=9.20170808ubuntu1 \
-    #netcat=9.20170808ubuntu1 \
-    netcat \
+    netcat=1.10-41.1 \
     postgresql=10+190ubuntu0.1 \
     python-pip=9.0.1-2.3~ubuntu1.18.04.5  \
     rsyslog=8.32.0-1ubuntu4 \
-    #sudo=8.32.0-1ubuntu4 \
-    sudo \
-    #unixodbc=8.32.0-1ubuntu4 \
-    unixodbc \
-    #vim=2:8.0.1453-1ubuntu1.7 \
-    vim \
+    sudo=1.8.21p2-3ubuntu1.4 \
+    unixodbc=2.3.4-1.1ubuntu3 \
+    vim=2:8.0.1453-1ubuntu1.8 \
     wget=1.19.4-1ubuntu2.2 \
     && pip install --no-cache-dir xmlrunner==1.7.7  \
     && apt-get clean \
