@@ -18,8 +18,16 @@ if [ ! -e /var/lib/irods/VERSION.json ]; then
 python /var/lib/irods/scripts/setup_irods.py < /var/lib/irods/packaging/localhost_setup_postgres.input
 
 sudo su - irods -c './irodsctl start'
+# create the training users
 cd /var/lib/irods/scripts
 python configure_users.py
+# set permissions on collection used in the educative course
+sudo su - irods -c 'ichmod inherit /tempZone/'
+# this is VERY broad brush - do do this in production!
+sudo su - irods -c 'ichmod -r read public /tempZone/'
+sudo su - irods -c 'imkdir -p /tempZone/educative'
+# run the treasure hunt script
+sudo su - irods -c '/training/admin/SetupTreasureHunt.sh -c /tempZone/educative -p /users.txt '
 sudo su - irods -c './irodsctl stop'
 fi
 
@@ -30,9 +38,6 @@ chown -R irods:irods /training
 # iRODS environment files are created by adduser.local script
 sudo adduser --home /home/ash --shell /bin/bash --ingroup irods --gecos '' --disabled-login ash
 sudo adduser --home /home/berri --shell /bin/bash --ingroup irods --gecos '' --disabled-login berri
-
-# "irods_authentication_file": "/tmp/.irodsA_berri",
-
 
 #give it a bit for the procs to finish
 running="True"

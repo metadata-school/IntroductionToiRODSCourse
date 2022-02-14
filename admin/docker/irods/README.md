@@ -15,7 +15,8 @@ sudo docker stop irodsServer
 sudo docker kill irodsServer
 sudo docker image rm $(sudo docker image ls | grep irodsserver | awk '{print $3'})
 sudo docker image rm ubuntu:18.04
-sudo docker image build --tag irodsserver:4.2.9 .
+cd admin/docker/irods/4.2.10
+sudo docker image build --tag irodsserver:4.2.10 .
 ```
 
 ## run docker in background 
@@ -45,8 +46,8 @@ sudo docker exec -ti -u irods  irodsServer  /bin/bash
 ## Regenerate tar file for Educative.io
 
 ```
-cd 4.2.10
-tar -czvf tarball.tar.gz Dockerfile start_provider.sh db_commands.txt configure_users.py users.txt adduser.local
+cd admin/docker/irods/4.2.10
+tar -czvf tarball.tar.gz Dockerfile start_provider.sh db_commands.txt configure_users.py users.txt adduser.local users.txt
 ```
 ## Lint Docker files 
 
