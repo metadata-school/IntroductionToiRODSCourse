@@ -22,7 +22,7 @@ sudo docker image build --tag irodsserver:4.2.10 .
 ## run docker in background 
 
 ```
-sudo docker run --name irodsServer -h irodsServer -p 1248:1248 -p 1247:1247 --shm-size=512m -d --rm irodsserver:4.2.9
+sudo docker run --name irodsServer -h irodsServer -p 1248:1248 -p 1247:1247 --shm-size=512m -d --rm irodsserver:4.2.10
 ```
 
 ## run docker as interactive session
@@ -30,7 +30,7 @@ sudo docker run --name irodsServer -h irodsServer -p 1248:1248 -p 1247:1247 --sh
 Best for the _nosetups images, as you may not get a shell if you kill the `start_provider.sh` script.
 
 ```
-sudo docker run --name irodsServertest -h irodsServertest --shm-size=512m -it  irodsserver:test
+sudo docker run --name irodsServer -h irodsServer --shm-size=512m -it  irodsserver:test
 ```
 
 ### run commands from within container
