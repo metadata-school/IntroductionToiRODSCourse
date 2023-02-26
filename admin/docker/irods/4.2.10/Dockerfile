@@ -1,7 +1,7 @@
 #
 # iRODS Provider Image for 4.2.10
 #
-FROM ubuntu:bionic-20220128
+FROM ubuntu:bionic
 
 # Install pre-requisites
 # tzone bug with it not seeming to respect noninteractive
